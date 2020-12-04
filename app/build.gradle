@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+//    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.imb.jobtop"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation libs.coroutines
+
+    implementation libs.coreKtx
+    implementation libs.constraintLayout
+    implementation libs.material
+    implementation libs.fragment
+
+    implementation libs.navigationUi
+    implementation libs.navigationFragment
+
+    implementation libs.lifecycleViewModel
+    implementation libs.lifecycleLiveData
+    kapt libs.lifecycleCompiler
+
+
+    implementation libs.retrofit
+    implementation libs.retrofitGsonConverter
+    implementation libs.okHttpLoggingInterceptor
+    implementation libs.chuck
+
+    implementation libs.hawkUtils
+
+    implementation libs.dagger
+    kapt libs.daggerCompiler
+
+    implementation libs.servicesLocation
+    implementation libs.gcm
+    implementation libs.maps
+    implementation libs.mapsUtility
+
+    implementation libs.multidex
+
+}
