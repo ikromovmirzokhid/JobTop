@@ -10,7 +10,8 @@ ext.versions = [
         gson            : '2.6.0',
         hawk            : '2.0.1',
         lottieVersion   : '3.4.1',
-        multidexVersion : '2.0.1'
+        multidexVersion : '2.0.1',
+        room            : "2.2.5"
 ]
 
 ext.libs = [
@@ -63,6 +64,11 @@ ext.libs = [
         mapsUtility                : 'com.google.maps.android:android-maps-utils:2.0.3',
 
         //multidex
-        multidex                   : "androidx.multidex:multidex:$versions.multidexVersion"
+        multidex                   : "androidx.multidex:multidex:$versions.multidexVersion",
+
+        //room
+        room                       : "androidx.room:room-runtime:$versions.room",
+        roomCompiler               : "androidx.room:room-compiler:$versions.room",
+        roomKTX                    : "androidx.room:room-ktx:$versions.room"
 
 ]
