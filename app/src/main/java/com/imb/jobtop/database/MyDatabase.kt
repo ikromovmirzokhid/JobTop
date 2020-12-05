@@ -8,7 +8,6 @@ import androidx.room.TypeConverters
 import com.imb.jobtop.model.Job
 
 @Database(entities = [Job::class], version = 1, exportSchema = false)
-@TypeConverters(org.hiro.noteapp.database.TypeConverters::class)
 abstract class MyDatabase : RoomDatabase() {
 
     abstract val jodDao: JobDao
