@@ -24,7 +24,7 @@ class VacancyViewModel @Inject constructor(
         _data = MutableLiveData()
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val response = api.getVacancyFromSomeWhere()
+                val response = api.getEconomyVacancy()
                 _data?.postValue(response)
             } catch (error: HttpException) {
 

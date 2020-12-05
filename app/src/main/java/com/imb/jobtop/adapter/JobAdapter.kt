@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.imb.jobtop.R
-import com.imb.jobtop.model.JobMinimal
+import com.imb.jobtop.model.Job
 import kotlinx.android.synthetic.main.list_item_job.view.*
 
 class JobAdapter(private val onclickListener: OnJobClickListener) :
-    ListAdapter<JobMinimal, JobViewHolder>(JobDiffCallback()) {
+    ListAdapter<Job, JobViewHolder>(JobDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobViewHolder =
         JobViewHolder.from(parent)
 
@@ -26,7 +26,7 @@ class JobViewHolder(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
 
     @SuppressLint("SetTextI18n")
-    fun bind(item: JobMinimal, onclickListener: OnJobClickListener) {
+    fun bind(item: Job, onclickListener: OnJobClickListener) {
         itemView.postedTimeText.text = item.time.toString()
         itemView.jobTitleText.text = item.title
         itemView.jobEmployerText.text = item.employer
@@ -48,23 +48,23 @@ class JobViewHolder(itemView: View) :
     }
 }
 
-class JobDiffCallback : DiffUtil.ItemCallback<JobMinimal>() {
-    override fun areItemsTheSame(oldItem: JobMinimal, newItem: JobMinimal): Boolean =
+class JobDiffCallback : DiffUtil.ItemCallback<Job>() {
+    override fun areItemsTheSame(oldItem: Job, newItem: Job): Boolean =
         oldItem.id == newItem.id
 
-    override fun areContentsTheSame(oldItem: JobMinimal, newItem: JobMinimal): Boolean =
+    override fun areContentsTheSame(oldItem: Job, newItem: Job): Boolean =
         oldItem.title == newItem.title && oldItem.location == newItem.location && oldItem.isFavorite == newItem.isFavorite
 }
 
 class OnJobClickListener(
-    val onclickListener: (job: JobMinimal) -> Unit,
-    val onFavoriteClickListener: (job: JobMinimal) -> Unit
+    val onclickListener: (job: Job) -> Unit,
+    val onFavoriteClickListener: (job: Job) -> Unit
 ) {
-    fun onClick(job: JobMinimal) {
+    fun onClick(job: Job) {
         onclickListener(job)
     }
 
-    fun onFavorClick(job: JobMinimal) {
+    fun onFavorClick(job: Job) {
         onFavoriteClickListener(job)
     }
 

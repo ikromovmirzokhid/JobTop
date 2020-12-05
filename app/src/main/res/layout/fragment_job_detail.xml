@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/jobIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:src="@drawable/ic_group_108"
+        app:layout_constraintBottom_toTopOf="@id/jobTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/jobTitle"
+        style="@style/Text.Black.Bold"
+        android:text="@string/app_name"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/jobIcon" />
+
+    <TextView
+        android:id="@+id/jobEmployer"
+        style="@style/Text.Black"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/jobTitle" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toTopOf="@id/container2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/jobEmployer">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/jobSalary"
+                style="@style/Text.Black"
+                android:layout_margin="10dp"
+                android:text="@string/app_name"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/jobPostTime"
+                style="@style/Text.Black"
+                android:layout_margin="10dp"
+                android:text="@string/app_name"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/jobLocation"
+                style="@style/Text.Black"
+                android:layout_margin="10dp"
+                android:text="@string/app_name"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toTopOf="@id/submitBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container1">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/header1"
+                style="@style/Text.Black.Bold"
+                android:text="@string/info"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/jobInfo"
+                style="@style/Text.Black"
+                android:text="@string/app_name"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/header2"
+                style="@style/Text.Black.Bold"
+                android:text="@string/requirements"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/jobRequirements"
+                style="@style/Text.Black"
+                android:text="@string/requirements"
+                android:textSize="20sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submitBtn"
+        style="@style/BaseButton.Blue"
+        android:text="@string/submit_cv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

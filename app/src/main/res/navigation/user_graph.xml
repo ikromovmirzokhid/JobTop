@@ -2,17 +2,22 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@+id/fragmentAuthUser"
+    app:startDestination="@+id/fragmentMainVacancy"
     android:id="@+id/user_graph">
 
     <fragment
-        android:id="@+id/fragmentAuthUser"
-        tools:layout="@layout/fragment_auth_user"
-        android:name="com.imb.jobtop.fragments.auth.FragmentAuthUser"
+        android:id="@+id/fragmentMainVacancy"
+        tools:layout="@layout/fragment_main_vacancy"
+        android:name="com.imb.jobtop.fragments.FragmentMainVacancy"
         android:label="FragmentMainVacancy" />
     <fragment
-        android:id="@+id/fragmentRegistrationUser"
-        tools:layout="@layout/fragment_registration_user"
-        android:name="com.imb.jobtop.fragments.auth.FragmentRegistrationUser"
-        android:label="FragmentRegistrationUser" />
+        tools:layout="@layout/fragment_job_list"
+        android:id="@+id/jobListFragment"
+        android:name="com.imb.jobtop.fragments.JobListFragment"
+        android:label="JobListFragment" />
+    <fragment
+        tools:layout="@layout/fragment_job_detail"
+        android:id="@+id/jobDetailFragment"
+        android:name="com.imb.jobtop.fragments.JobDetailFragment"
+        android:label="JobDetailFragment" />
 </navigation>

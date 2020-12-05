@@ -51,6 +51,9 @@ dependencies {
 
     implementation libs.lifecycleViewModel
     implementation libs.lifecycleLiveData
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
     kapt libs.lifecycleCompiler
 
 
@@ -72,5 +75,9 @@ dependencies {
     implementation libs.multidex
 
     implementation 'com.google.android.material:material:1.0.0-beta01'
+
+    implementation libs.room
+    kapt libs.roomCompiler
+    implementation libs.roomKTX
 
 }
