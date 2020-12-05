@@ -7,6 +7,7 @@ import com.imb.jobtop.di.ViewModelFactory
 import com.imb.jobtop.di.ViewModelKey
 import com.imb.jobtop.network.api.VacancyApi
 import com.imb.jobtop.utils.resources.ResourceProvider
+import com.imb.jobtop.viewmodel.JobViewModel
 import com.imb.jobtop.viewmodel.VacancyViewModel
 import dagger.Binds
 import dagger.BindsInstance
@@ -47,4 +48,9 @@ abstract class MainScreenModule {
     @IntoMap
     @ViewModelKey(VacancyViewModel::class)
     abstract fun vacancyViewModel(viewModel: VacancyViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(JobViewModel::class)
+    abstract fun vacancyViewModel(viewModel: JobViewModel): ViewModel
 }

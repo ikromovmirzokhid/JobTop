@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="category"
+            type="com.imb.jobtop.model.Category" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/categoryIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:src="@drawable/ic_round_person_24" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/categoryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{category.title}"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/categoryCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{category.jobCount}"
+                android:textSize="18sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+</layout>

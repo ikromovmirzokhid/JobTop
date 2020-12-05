@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homePage"
+        android:icon="@drawable/ic_round_home_24"
+        android:title="home"
+        />
+    <item
+        android:id="@+id/favPage"
+        android:icon="@drawable/ic_round_favorite_24"
+        android:title="fav"/>
+    <item
+        android:id="@+id/userPage"
+        android:icon="@drawable/ic_round_person_24"
+        android:title="user"
+        />
+</menu>

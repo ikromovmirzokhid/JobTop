@@ -1,4 +1,4 @@
-package uz.infin.core.network.tls
+package com.imb.jobtop.network.tls
 
 import android.os.Build
 import android.util.Log

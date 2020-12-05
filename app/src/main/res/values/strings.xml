@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">JobTop</string>
+    <string name="search_jobs">Qidiring</string>
+    <string name="categories">Kategoriyalar</string>
+    <string name="recommended">Tavsiya qilinganlar</string>
+    <string name="see_all_jobs">Barcha ishlar</string>
+    <string name="info">Ma\'lumotlar</string>
+    <string name="requirements">Talablar</string>
+    <string name="submit_cv">Rezyume yuborish</string>
 </resources>

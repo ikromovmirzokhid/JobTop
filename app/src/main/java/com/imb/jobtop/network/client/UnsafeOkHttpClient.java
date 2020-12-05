@@ -9,7 +9,7 @@ import javax.net.ssl.X509TrustManager;
 
 import okhttp3.OkHttpClient;
 
-import static uz.infin.core.network.tls.TlsExtKt.enableTlsOnPreLollipop;
+import static com.imb.jobtop.network.tls.TlsExtKt.enableTlsOnPreLollipop;
 
 public class UnsafeOkHttpClient {
     public static OkHttpClient.Builder getUnsafeOkHttpClient() {

@@ -11,10 +11,7 @@ import androidx.fragment.app.Fragment
 import com.imb.jobtop.MainActivity
 
 
-abstract class BaseFragment(
-    layoutId: Int
-) :
-    Fragment(layoutId) {
+abstract class BaseFragment(layoutId: Int) : Fragment(layoutId) {
 
     var detached = true
 

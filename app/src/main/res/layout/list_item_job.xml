@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="job"
+            type="com.imb.jobtop.model.JobMinimal" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/jobTitleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{job.title}"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/jobEmployerText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/jobEmployerText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{job.employer}"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@id/jobSalaryText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/jobTitleText" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/jobSalaryText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@{job.salary}"
+                android:textColor="@color/blue"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/jobEmployerText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/jobLocationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{job.location}"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/locationIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/locationIcon"
+                app:layout_constraintTop_toTopOf="@id/locationIcon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/postedTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/timeIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/timeIcon"
+                app:layout_constraintTop_toTopOf="@id/timeIcon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/timeIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:src="@drawable/ic_round_access_time_24"
+                app:layout_constraintBottom_toTopOf="@id/locationIcon"
+                app:layout_constraintEnd_toStartOf="@id/postedTimeText"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/locationIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:src="@drawable/ic_baseline_location_on_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/jobLocationText"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/timeIcon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/favoriteBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_round_favorite_border_24"
+                app:layout_constraintBottom_toBottomOf="@id/jobSalaryText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/jobSalaryText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
