@@ -29,7 +29,7 @@ class CategoryViewHolder(private val itemView: View) :
     fun bind(item: Category, onclickListener: OnCategoryClickListener) {
         itemView.categoryTitle.text = item.title
         itemView.categoryCount.text = "${item.jobCount} ta ish o'rni mavjud"
-        itemView.categoryIcon.setImageBitmap(item.icon)
+//        itemView.categoryIcon.setImageBitmap(item.icon)
         itemView.setOnClickListener { onclickListener.onClick(item) }
     }
 

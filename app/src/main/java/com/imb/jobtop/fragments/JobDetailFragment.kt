@@ -26,7 +26,7 @@ class JobDetailFragment : BaseFragment(R.layout.fragment_job_detail) {
             jobSalary.text = job.salary
             jobLocation.text = job.location
             jobPostTime.text = job.time.toString()
-            jobRequirements.text = job.requirements.joinToString(separator = "\n")
+//            jobRequirements.text = job.requirements.joinToString(separator = "\n")
         }
 
         submitBtn.setOnClickListener {

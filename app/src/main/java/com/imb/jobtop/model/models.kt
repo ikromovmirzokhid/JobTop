@@ -15,13 +15,12 @@ data class Job(
     var salary: String,
     var isFavorite: Boolean,
     var location: String,
-    var time: Long,
-    var requirements: List<String>
+    var time: Long
+//    var requirements: List<String>
 )
 
 data class Category(
     var id: Long,
-    var icon: Bitmap,
     var title: String,
     var jobCount: Int,
 )

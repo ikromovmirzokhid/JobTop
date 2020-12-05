@@ -8,7 +8,7 @@ import com.imb.jobtop.fragments.FragmentMainVacancy
 import com.imb.jobtop.fragments.FragmentProfile
 import com.imb.jobtop.fragments.JobListFragment
 import com.imb.jobtop.fragments.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_main_vacancy.*
+import kotlinx.android.synthetic.main.fragment_main.*
 
 class FragmentMain : BaseFragment(R.layout.fragment_main) {
 
