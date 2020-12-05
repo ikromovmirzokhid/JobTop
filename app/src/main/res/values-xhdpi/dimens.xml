@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    margin top-->
+    <dimen name="marginLittle">2dp</dimen>
+    <dimen name="marginSmall">4dp</dimen>
+    <dimen name="marginEasy">6dp</dimen>
+    <dimen name="marginBase">10dp</dimen>
+    <dimen name="marginHigh">14dp</dimen>
+    <dimen name="marginVeryHigh">20dp</dimen>
+    <dimen name="marginVerySmall">4dp</dimen>
+
+    <!--    margin side-->
+    <dimen name="marginSideLittle">8dp</dimen>
+    <dimen name="marginSideSmall">12dp</dimen>
+    <dimen name="marginSideNormal">16dp</dimen>
+    <dimen name="marginSideHigh">24dp</dimen>
+    <dimen name="marginSideVeryHigh">40dp</dimen>
+    <dimen name="marginSideMuchHigh">56dp</dimen>
+
+    <!--    text size-->
+    <dimen name="textHighLarge">21dp</dimen>
+    <dimen name="textLarge">19dp</dimen>
+    <dimen name="textBig">16dp</dimen>
+    <dimen name="textNormal">15dp</dimen>
+    <dimen name="textNormalSmall">13dp</dimen>
+    <dimen name="textLittle">11dp</dimen>
+
+    <!--    height-->
+    <dimen name="heightBaseButton">42dp</dimen>
+    <dimen name="heightEnterButton">28dp</dimen>
+    <dimen name="heightPagerProduct">120dp</dimen>
+    <dimen name="heightAuthBottomBar">44dp</dimen>
+
+</resources>

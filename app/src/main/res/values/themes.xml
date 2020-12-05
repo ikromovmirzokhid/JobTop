@@ -21,4 +21,25 @@
         <item name="colorAccent">@color/blue</item>
         <item name="android:windowBackground">@color/baseWhite</item>
     </style>
+
+    <style name="BaseButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/heightBaseButton</item>
+    </style>
+
+
+    <style name="BaseButton.Blue">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/selector_base_button_blue</item>
+        <item name="android:textColor">@color/baseWhite</item>
+        <item name="android:textSize">@dimen/textNormal</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+        <item name="android:layout_marginStart">@dimen/marginSideNormal</item>
+        <item name="android:layout_marginEnd">@dimen/marginSideNormal</item>
+        <item name="android:layout_marginLeft">@dimen/marginSideNormal</item>
+        <item name="android:layout_marginRight">@dimen/marginSideNormal</item>
+        <item name="android:layout_marginTop">@dimen/marginBase</item>
+        <item name="android:layout_marginBottom">@dimen/marginBase</item>
+    </style>
+
 </resources>
