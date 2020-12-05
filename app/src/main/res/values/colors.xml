@@ -9,10 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#1565D8</color>
     <color name="lightMagenta">#CCCCFF</color>
+    <color name="gray">#696F79</color>
 
     <color name="baseWhite">#fffffefe</color>
     <color name="colorTransparent">#00000000</color>
 
     <color name="buttonDisabledColor">#f3f3f3</color>
+    <color name="baseLinkColor">#0265F0</color>
 
 </resources>
