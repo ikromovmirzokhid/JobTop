@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TwoTextTextView">
+        <attr name="bothSize" format="float" />
+        <attr name="firstColor" format="color" />
+        <attr name="secondColor" format="color" />
+        <attr name="firstText" format="string" />
+        <attr name="secondText" format="string" />
+        <attr name="bothStyle" format="integer" />
+    </declare-styleable>
+</resources>
