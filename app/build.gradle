@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
-//    id 'com.google.gms.google-services'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -75,6 +75,9 @@ dependencies {
     implementation libs.multidex
 
     implementation 'com.google.android.material:material:1.0.0-beta01'
+    implementation platform('com.google.firebase:firebase-bom:26.1.1')
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-analytics'
 
     implementation libs.room
     kapt libs.roomCompiler
