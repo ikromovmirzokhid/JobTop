@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "617999051556",
+    "project_id": "jobtop-7f369",
+    "storage_bucket": "jobtop-7f369.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:617999051556:android:878d48fd1ba196c7cb61b1",
+        "android_client_info": {
+          "package_name": "com.imb.jobtop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "617999051556-ns0hk4s0j1gi6n91qos75fa4758n93se.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7rgmgUaQbE18tJEQBGVq5X9ZSswnPmYs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "617999051556-ns0hk4s0j1gi6n91qos75fa4758n93se.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,4 +10,10 @@ object HawkUtils {
         set(value) {
             Hawk.put("FIRST_OPEN", value)
         }
+
+    var userLoggedIn: Boolean
+        get() = Hawk.get("LOGGED_IN", false)
+        set(value) {
+            Hawk.put("LOGGED_IN", value)
+        }
 }
