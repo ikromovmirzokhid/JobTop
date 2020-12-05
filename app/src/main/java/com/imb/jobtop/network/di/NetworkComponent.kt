@@ -36,7 +36,7 @@ interface NetworkComponent {
 abstract class NetworkModule {
 
     companion object {
-        private const val BASE_URL = "https://data.gov.uz/uz/api/v1/json/"
+        private const val BASE_URL = "https://data.gov.uz/uz/api/v1/json/dataset/"
 
         @Provides
         @Singleton

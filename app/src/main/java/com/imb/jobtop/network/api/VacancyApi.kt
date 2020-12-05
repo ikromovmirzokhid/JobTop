@@ -9,6 +9,9 @@ interface VacancyApi {
     @GET("13645/version/10074?access_key=$accessKey")
     suspend fun getEconomyVacancy(): Any
 
+    @GET("9035/version/29697?access_key=$accessKey")
+    suspend fun getTransportVacancy(): Any
+
     @GET("{dataSet_id}/version/{vacancy_id}?access_key=$accessKey")
     suspend fun getVacancy(
         @Path("dataSet_id") dataSet_id: Int,

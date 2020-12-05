@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey
 data class Job(
     @PrimaryKey(autoGenerate = true)
     var id: Long,
+    var catId: Long,
     var title: String,
     var employer: String,
     var info: String,

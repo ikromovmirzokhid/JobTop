@@ -16,6 +16,7 @@ import com.imb.jobtop.adapter.CategoryAdapter
 import com.imb.jobtop.adapter.JobAdapter
 import com.imb.jobtop.adapter.OnCategoryClickListener
 import com.imb.jobtop.adapter.OnJobClickListener
+import com.imb.jobtop.database.MyDatabase
 import com.imb.jobtop.di.components.MainComponent
 import com.imb.jobtop.fragments.base.BaseFragment
 import com.imb.jobtop.utils.extensions.progressOff
@@ -33,27 +34,15 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
     private lateinit var jobAdapter: JobAdapter
     private lateinit var categoryAdapter: CategoryAdapter
 
+    private lateinit var db: MyDatabase
     private val viewModel by viewModels<VacancyViewModel> { component.viewModelFactory() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        categoryAdapter = CategoryAdapter(OnCategoryClickListener {
-            val b = Bundle()
-            b.putData("category_id", it)
-            b.putInt("type", 0)
-            findNavController().navigate(R.id.jobList, b)
-        })
-
-        jobAdapter = JobAdapter(OnJobClickListener({
-            val b = Bundle()
-            b.putData("job", it)
-            findNavController().navigate(R.id.jobDetailFragment, b)
-        }, {
-            TODO("favourite button")
-        }))
-
+        db = MyDatabase.getInstance(requireContext())
+        initAdapters()
         initSearchView()
-        initBottomNavBar()
+        initNavBar()
 
         val jobManager = LinearLayoutManager(context)
         val catManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -64,38 +53,38 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
         loadVacancies()
     }
 
+    private fun initAdapters() {
+        categoryAdapter = CategoryAdapter(OnCategoryClickListener {
+            val b = Bundle()
+            b.putData("category_id", it)
+            b.putInt("type", 0)
+            findNavController().navigate(R.id.jobList, b)
+        })
+        jobAdapter = JobAdapter(OnJobClickListener({
+            val b = Bundle()
+            b.putData("job", it)
+            findNavController().navigate(R.id.jobDetailFragment, b)
+        }, {
+            it.isFavorite = !it.isFavorite
+            db.jodDao.update(it)
+        }))
+    }
+
     private fun initSearchView() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                TODO("Not yet implemented")
+                return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                TODO("Not yet implemented")
+                val list = db.jodDao.getJobsByLocation(newText ?: "")
+                viewModel.searchJobs(list)
+                return true
             }
         })
     }
 
-    private fun initBottomNavBar() {
-        bottomNavigation.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.homePage -> {
-                    findNavController()
-                }
-                R.id.favPage -> {
-                    val b = Bundle()
-                    b.putInt("type", 1)
-                    findNavController().navigate(R.id.jobListFragment, b)
-                }
-                R.id.userPage -> {
-
-                }
-            }
-            true
-        }
-    }
-
-    private fun initToolbar() {
+    private fun initNavBar() {
         drawerBtn.setOnClickListener {
             if (drawerLayout != null && navView != null)
                 drawerLayout.openDrawer(navView)//GravityCompat.START)
