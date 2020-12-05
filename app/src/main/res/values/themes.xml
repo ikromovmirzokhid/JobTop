@@ -71,7 +71,40 @@
 
     <style name="modifiedEditText" parent="parent">
         <item name="android:textSize">@dimen/textNormalSmall</item>
-<!--        <item name="android:backgroundTint">@color/</item>-->
+        <item name="android:backgroundTint">@color/blue</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="colorControlNormal">@color/blue</item>
+        <item name="colorControlActivated">@color/blue</item>
+    </style>
+
+    <style name="TextLabel" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:textSize">@dimen/textNormalSmall</item>
+        <item name="colorControlNormal">@color/blue</item>
+        <item name="colorControlActivated">@color/blue</item>
+    </style>
+
+    <style name="BackArrowPrimary">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:src">@drawable/ic_baseline_arrow_back_24</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
     </style>
 
 

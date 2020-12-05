@@ -6,10 +6,10 @@ import retrofit2.http.Path
 interface VacancyApi {
 
 
-    @GET("13645/version/21571?access_key=$accessKey")
+    @GET("dataset/13645/version/21571?access_key=$accessKey")
     suspend fun getVacancyFromSomeWhere(): Any
 
-    @GET("{dataSet_id}/version/{vacancy_id}?access_key=$accessKey")
+    @GET("dataset/{dataSet_id}/version/{vacancy_id}?access_key=$accessKey")
     suspend fun getVacancy(@Path("dataSet_id") dataSet_id: Int, @Path("vacancy_id") vacancyId: Int): Any
 }
 

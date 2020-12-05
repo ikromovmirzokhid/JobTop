@@ -8,7 +8,6 @@ import com.imb.jobtop.adapter.CategoryAdapter
 import com.imb.jobtop.adapter.JobAdapter
 import com.imb.jobtop.di.components.MainComponent
 import com.imb.jobtop.fragments.base.BaseFragment
-import com.imb.jobtop.viewmodel.JobViewModel
 import com.imb.jobtop.viewmodel.VacancyViewModel
 
 class JobFragment : BaseFragment(R.layout.fragment_job) {
@@ -17,17 +16,17 @@ class JobFragment : BaseFragment(R.layout.fragment_job) {
         MainComponent.create()
     }
 
-    private val viewModel by viewModels<JobViewModel> { component.viewModelFactory() }
+//    private val viewModel by viewModels<JobViewModel> { component.viewModelFactory() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.submit.observe(viewLifecycleOwner, {
-            if (it) {
-
-                viewModel.submitCompleted()
-            }
-        })
+//        viewModel.submit.observe(viewLifecycleOwner, {
+//            if (it) {
+//
+//                viewModel.submitCompleted()
+//            }
+//        })
 
     }
 }

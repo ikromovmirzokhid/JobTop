@@ -23,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            app:bothStyle="1"
             android:layout_marginTop="50dp"
             app:firstText="Job"
             app:bothSize="64"

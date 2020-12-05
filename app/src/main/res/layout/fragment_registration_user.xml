@@ -27,8 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/marginHigh"
-            android:layout_marginBottom="@dimen/marginVeryHigh"
+            android:layout_marginTop="@dimen/marginBase"
             app:bothSize="40"
             app:bothStyle="1"
             app:firstText="Job"
@@ -38,14 +37,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="@dimen/marginBase"
+            android:layout_marginTop="@dimen/marginSmall"
+            android:layout_marginRight="30dp"
+            android:hint="Ism-Familya"
+            android:theme="@style/TextLabel"
+            app:helperText="Ismingiz va familyangizni kiriting">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="@dimen/marginSmall"
             android:layout_marginRight="30dp"
             android:hint="E-mail"
             android:theme="@style/TextLabel"
             app:helperText="E-mail adresini kiritiing">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/loginEditText"
+                android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress" />
@@ -55,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="@dimen/marginBase"
+            android:layout_marginTop="@dimen/marginSmall"
             android:layout_marginRight="30dp"
             android:hint="Parol"
             android:theme="@style/TextLabel"
@@ -68,9 +84,37 @@
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="@dimen/marginSmall"
+            android:layout_marginRight="30dp"
+            android:hint="Parol"
+            android:theme="@style/TextLabel"
+            app:helperText="Parolingizni qayta tering">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/rePasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="@dimen/marginEasy"
+            android:layout_marginRight="30dp"
+            android:entries="@array/animals"
+            android:background="@drawable/text_input_layout_bg"
+            android:prompt="@style/spinner_title" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginLittle"
             android:layout_marginBottom="@dimen/marginBase"
             android:gravity="center">
 
@@ -111,12 +155,12 @@
         <Button
             android:id="@+id/enterBtn"
             style="@style/BaseButton.Blue"
-            android:text="Kirish" />
+            android:text="Registratsiya" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/marginHigh"
+            android:layout_marginBottom="@dimen/marginBase"
             android:gravity="center">
 
             <TextView

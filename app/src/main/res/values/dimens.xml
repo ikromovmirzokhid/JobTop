@@ -1,42 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <?xml version="1.0" encoding="utf-8"?>
-    <resources>
+    <!--    margin top-->
+    <dimen name="marginLittle">4dp</dimen>
+    <dimen name="marginSmall">8dp</dimen>
+    <dimen name="marginEasy">12dp</dimen>
+    <dimen name="marginBase">16dp</dimen>
+    <dimen name="marginHigh">24dp</dimen>
+    <dimen name="marginVeryHigh">32dp</dimen>
+    <dimen name="marginVerySmall">4dp</dimen>
 
-        <!--    margin top-->
-        <dimen name="marginLittle">4dp</dimen>
-        <dimen name="marginSmall">8dp</dimen>
-        <dimen name="marginEasy">12dp</dimen>
-        <dimen name="marginBase">16dp</dimen>
-        <dimen name="marginHigh">24dp</dimen>
-        <dimen name="marginVeryHigh">32dp</dimen>
-        <dimen name="marginVerySmall">4dp</dimen>
-
-        <!--    margin side-->
-        <dimen name="marginSideLittle">8dp</dimen>
-        <dimen name="marginSideSmall">12dp</dimen>
-        <dimen name="marginSideNormal">16dp</dimen>
-        <dimen name="marginSideHigh">24dp</dimen>
-        <dimen name="marginSideVeryHigh">40dp</dimen>
-        <dimen name="marginSideMuchHigh">56dp</dimen>
+    <!--    margin side-->
+    <dimen name="marginSideLittle">8dp</dimen>
+    <dimen name="marginSideSmall">12dp</dimen>
+    <dimen name="marginSideNormal">16dp</dimen>
+    <dimen name="marginSideHigh">24dp</dimen>
+    <dimen name="marginSideVeryHigh">40dp</dimen>
+    <dimen name="marginSideMuchHigh">56dp</dimen>
 
 
-        <!--    text size-->
-        <dimen name="textHighLarge">24dp</dimen>
-        <dimen name="textLarge">20dp</dimen>
-        <dimen name="textBig">18dp</dimen>
-        <dimen name="textNormal">16dp</dimen>
-        <dimen name="textNormalSmall">14dp</dimen>
-        <dimen name="textLittle">12dp</dimen>
+    <!--    text size-->
+    <dimen name="textHighLarge">24dp</dimen>
+    <dimen name="textLarge">20dp</dimen>
+    <dimen name="textBig">18dp</dimen>
+    <dimen name="textNormal">16dp</dimen>
+    <dimen name="textNormalSmall">14dp</dimen>
+    <dimen name="textLittle">12dp</dimen>
 
 
-        <!--    height-->
-        <dimen name="heightBaseButton">48dp</dimen>
-        <dimen name="heightEnterButton">36dp</dimen>
-        <dimen name="heightPagerProduct">172dp</dimen>
-        <dimen name="heightAuthBottomBar">56dp</dimen>
-        <dimen name="icon_size">40dp</dimen>
+    <!--    height-->
+    <dimen name="heightBaseButton">48dp</dimen>
+    <dimen name="heightEnterButton">36dp</dimen>
+    <dimen name="heightPagerProduct">172dp</dimen>
+    <dimen name="heightAuthBottomBar">56dp</dimen>
+    <dimen name="icon_size">40dp</dimen>
 
 
-    </resources>
 </resources>

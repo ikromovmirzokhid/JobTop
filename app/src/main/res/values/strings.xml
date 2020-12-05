@@ -7,5 +7,13 @@
     <string name="info">Ma\'lumotlar</string>
     <string name="requirements">Talablar</string>
     <string name="submit_cv">Rezyume yuborish</string>
-    <string name="registration_text"><u>Registratsiyadan o'tish</u></string>
+    <string name="registration_text"><u>Registratsiyadan o\'tish</u></string>
+    <string name="ilova_qoidalari"><u>Ilova qoidalari</u></string>
+    <style name="spinner_title">Qiziqishlaringiz</style>
+
+    <string-array name="animals">
+        <item>Cat</item>
+        <item>Dog</item>
+        <item>Animal</item>
+    </string-array>
 </resources>
