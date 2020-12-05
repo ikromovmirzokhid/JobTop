@@ -6,8 +6,6 @@ import androidx.fragment.app.viewModels
 import com.imb.jobtop.R
 import com.imb.jobtop.adapter.CategoryAdapter
 import com.imb.jobtop.adapter.JobAdapter
-import com.imb.jobtop.databinding.FragmentJobBinding
-import com.imb.jobtop.databinding.FragmentMainVacancyBinding
 import com.imb.jobtop.di.components.MainComponent
 import com.imb.jobtop.fragments.base.BaseFragment
 import com.imb.jobtop.viewmodel.JobViewModel
@@ -23,7 +21,6 @@ class JobFragment : BaseFragment(R.layout.fragment_job) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val binding = FragmentJobBinding.inflate(layoutInflater)
 
         viewModel.submit.observe(viewLifecycleOwner, {
             if (it) {
@@ -32,6 +29,5 @@ class JobFragment : BaseFragment(R.layout.fragment_job) {
             }
         })
 
-        binding.viewModel = viewModel
     }
 }

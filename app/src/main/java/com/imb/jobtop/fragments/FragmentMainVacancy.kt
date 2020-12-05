@@ -3,7 +3,6 @@ package com.imb.jobtop.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.SearchView
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,12 +11,12 @@ import com.imb.jobtop.adapter.CategoryAdapter
 import com.imb.jobtop.adapter.JobAdapter
 import com.imb.jobtop.adapter.OnCategoryClickListener
 import com.imb.jobtop.adapter.OnJobClickListener
-import com.imb.jobtop.databinding.FragmentMainVacancyBinding
 import com.imb.jobtop.di.components.MainComponent
 import com.imb.jobtop.fragments.base.BaseFragment
 import com.imb.jobtop.utils.extensions.progressOff
 import com.imb.jobtop.utils.extensions.progressOn
 import com.imb.jobtop.viewmodel.VacancyViewModel
+import kotlinx.android.synthetic.main.fragment_main_vacancy.*
 
 class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
 
@@ -31,7 +30,6 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val binding = FragmentMainVacancyBinding.inflate(layoutInflater)
         categoryAdapter = CategoryAdapter(OnCategoryClickListener {
 
         })
@@ -42,7 +40,7 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
 
         }))
 
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 TODO("Not yet implemented")
             }
@@ -54,10 +52,10 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
 
         val jobManager = LinearLayoutManager(context)
         val catManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.jobList.adapter = jobAdapter
-        binding.jobList.layoutManager = jobManager
-        binding.categoryList.adapter = categoryAdapter
-        binding.categoryList.layoutManager = catManager
+        jobList.adapter = jobAdapter
+        jobList.layoutManager = jobManager
+        categoryList.adapter = categoryAdapter
+        categoryList.layoutManager = catManager
         loadVacancies()
     }
 

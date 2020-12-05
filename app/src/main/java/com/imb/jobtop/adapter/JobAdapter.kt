@@ -1,14 +1,15 @@
 package com.imb.jobtop.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.imb.jobtop.R
-import com.imb.jobtop.databinding.ListItemJobBinding
 import com.imb.jobtop.model.JobMinimal
+import kotlinx.android.synthetic.main.list_item_job.view.*
 
 class JobAdapter(private val onclickListener: OnJobClickListener) :
     ListAdapter<JobMinimal, JobViewHolder>(JobDiffCallback()) {
@@ -21,25 +22,28 @@ class JobAdapter(private val onclickListener: OnJobClickListener) :
 
 }
 
-class JobViewHolder(private val binding: ListItemJobBinding) :
-    RecyclerView.ViewHolder(binding.root) {
+class JobViewHolder(itemView: View) :
+    RecyclerView.ViewHolder(itemView) {
 
+    @SuppressLint("SetTextI18n")
     fun bind(item: JobMinimal, onclickListener: OnJobClickListener) {
-        binding.job = item
-        binding.postedTimeText.text = item.time.toString()
-        binding.root.setOnClickListener { onclickListener.onClick(item) }
-        binding.favoriteBtn.setOnClickListener { onclickListener.onFavorClick(item) }
+        itemView.postedTimeText.text = item.time.toString()
+        itemView.jobTitleText.text = item.title
+        itemView.jobEmployerText.text = item.employer
+        itemView.jobLocationText.text = item.location
+        itemView.jobSalaryText.text = "Maosh - ${item.salary}"
+        itemView.setOnClickListener { onclickListener.onClick(item) }
+        itemView.favoriteBtn.setOnClickListener { onclickListener.onFavorClick(item) }
     }
 
     companion object {
         fun from(parent: ViewGroup): JobViewHolder {
-            val binding = DataBindingUtil.inflate<ListItemJobBinding>(
-                LayoutInflater.from(parent.context),
+            val v = LayoutInflater.from(parent.context).inflate(
                 R.layout.list_item_job,
                 parent,
                 false
             )
-            return JobViewHolder(binding)
+            return JobViewHolder(v)
         }
     }
 }

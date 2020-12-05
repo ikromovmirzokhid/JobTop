@@ -1,15 +1,16 @@
 package com.imb.jobtop.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.imb.jobtop.R
-import com.imb.jobtop.databinding.ListItemCategoryBinding
 import com.imb.jobtop.model.Category
 import kotlinx.android.synthetic.main.list_item_category.view.*
+import kotlinx.android.synthetic.main.list_item_job.view.*
 
 class CategoryAdapter(private val onclickListener: OnCategoryClickListener) :
     ListAdapter<Category, CategoryViewHolder>(CategoryDiffCallback()) {
@@ -21,24 +22,25 @@ class CategoryAdapter(private val onclickListener: OnCategoryClickListener) :
         holder.bind(getItem(position), onclickListener)
 }
 
-class CategoryViewHolder(private val binding: ListItemCategoryBinding) :
-    RecyclerView.ViewHolder(binding.root) {
+class CategoryViewHolder(private val itemView: View) :
+    RecyclerView.ViewHolder(itemView) {
 
+    @SuppressLint("SetTextI18n")
     fun bind(item: Category, onclickListener: OnCategoryClickListener) {
-        binding.category = item
-        binding.categoryIcon.setImageBitmap(item.icon)
-        binding.root.setOnClickListener { onclickListener.onClick(item) }
+        itemView.categoryTitle.text = item.title
+        itemView.categoryCount.text = "${item.jobCount} ta ish o'rni mavjud"
+        itemView.categoryIcon.setImageBitmap(item.icon)
+        itemView.setOnClickListener { onclickListener.onClick(item) }
     }
 
     companion object {
         fun from(parent: ViewGroup): CategoryViewHolder {
-            val binding = DataBindingUtil.inflate<ListItemCategoryBinding>(
-                LayoutInflater.from(parent.context),
+            val v = LayoutInflater.from(parent.context).inflate(
                 R.layout.list_item_job,
                 parent,
                 false
             )
-            return CategoryViewHolder(binding)
+            return CategoryViewHolder(v)
         }
     }
 }
