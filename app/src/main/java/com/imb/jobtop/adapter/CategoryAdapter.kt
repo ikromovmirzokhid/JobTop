@@ -1,6 +1,7 @@
 package com.imb.jobtop.adapter
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.imb.jobtop.R
 import com.imb.jobtop.model.Category
+import com.imb.jobtop.utils.Colors
 import kotlinx.android.synthetic.main.list_item_category.view.*
 import kotlinx.android.synthetic.main.list_item_job.view.*
 
@@ -29,7 +31,7 @@ class CategoryViewHolder(itemView: View) :
     fun bind(item: Category, onclickListener: OnCategoryClickListener) {
         itemView.categoryTitle.text = item.title
         itemView.categoryCount.text = "${item.jobCount} ta ish o'rni mavjud"
-//        itemView.categoryIcon.setImageBitmap(item.icon)
+        itemView.setBackgroundColor(Colors.getRandomColor())
         itemView.setOnClickListener { onclickListener.onClick(item) }
     }
 

@@ -9,7 +9,9 @@ data class Job(
     var salary: String,
     var isFavorite: Boolean = false,
     var location: String,
-    var requirements: String
+    var requirements: String,
+    val lat: String? = null,
+    val lng: String? = null
 )
 
 data class Category(
@@ -45,7 +47,9 @@ object Mapper {
             phoneNumber = v.tel ?: "000",
             salary = v.maosh ?: "tekinga",
             location = v.address ?: "oshatta",
-            requirements = v.talablar ?: "diplom bolsa boldi"
+            requirements = v.talablar ?: "diplom bolsa boldi",
+            lat = v.lat,
+            lng = v.lng,
         )
     }
 }

@@ -51,6 +51,8 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
         db = Firebase.firestore
         data = mutableListOf()
         categ = mutableListOf()
+        dataByInterest = mutableListOf()
+
         db.collection("user").document(Firebase.auth.uid!!).get().addOnSuccessListener {
             interest = it.toObject<User>()?.interests
             fetchData("energetika")
@@ -97,11 +99,11 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
                     val d = doc.toObject<Vacancy>()
                     data.add(Mapper.vacancyToJob(d, doc.id, cat))
                     interest?.let {
-                        if (doc.id == interest)
+                        if (cat == interest)
                             dataByInterest.add(Mapper.vacancyToJob(d, doc.id, cat))
                     }
-                    Log.d("TAG", "fetchData: ${doc.id} ${doc.data}")
-                    Log.d("TAG", "fetchedData: $d")
+                    Log.d("TAG", "fetchData: ${doc.id}")
+                    Log.d("TAG", "\n\ninterest: $interest \n\n")
                 }
                 categ.add(Category(db.collection(cat).id, cat, document.documents.size))
             }
