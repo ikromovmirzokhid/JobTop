@@ -51,7 +51,7 @@ class JobDetailFragment : BaseFragment(R.layout.fragment_job_detail) {
             pressBack()
         }
         submitBtn.setOnClickListener {
-            TODO("submit CV")
+
         }
     }
 }

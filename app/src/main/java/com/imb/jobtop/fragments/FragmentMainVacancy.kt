@@ -52,15 +52,22 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
         data = mutableListOf()
         categ = mutableListOf()
         dataByInterest = mutableListOf()
-
-        db.collection("user").document(Firebase.auth.uid!!).get().addOnSuccessListener {
-            interest = it.toObject<User>()?.interests
-            fetchData("energetika")
-            fetchData("ta'lim")
-            fetchData("iqtisod")
-            fetchData("tibbiyot")
-            fetchData("transport")
-        }
+        progressOn()
+        db.collection("users").document(Firebase.auth.currentUser!!.uid).get()
+            .addOnSuccessListener {
+                val u = it.toObject<User>()
+                interest = u!!.interests
+                Log.d("TAG", "user: $u")
+                fetchData("energetika")
+                progressOn()
+                fetchData("ta'lim")
+                progressOn()
+                fetchData("iqtisod")
+                progressOn()
+                fetchData("tibbiyot")
+                progressOn()
+                fetchData("transport")
+            }
 
         initAdapters()
         initSearchView()
@@ -107,10 +114,14 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
                 }
                 categ.add(Category(db.collection(cat).id, cat, document.documents.size))
             }
-            jobAdapter.submitList(dataByInterest)
+            if (dataByInterest.size != 0)
+                jobAdapter.submitList(dataByInterest)
+            else
+                jobAdapter.submitList(data)
             jobAdapter.notifyDataSetChanged()
             categoryAdapter.submitList(categ)
             categoryAdapter.notifyDataSetChanged()
+            progressOff()
         }.addOnFailureListener {
             Log.d("TAG", "fetchData: ${it.message}")
         }

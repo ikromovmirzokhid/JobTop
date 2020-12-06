@@ -38,9 +38,10 @@ data class Vacancy(
 //)
 
 object Mapper {
-    fun vacancyToJob(v: Vacancy, id: String, catID: String): Job {
+    fun vacancyToJob(v: Vacancy, id: String, catID: String, b: Boolean = false): Job {
         return Job(
             id = id,
+            isFavorite = b,
             catId = catID,
             title = v.lavozim ?: "oddiy ishchi",
             employer = v.tashkilot_nomi ?: "Nomi yoq",
@@ -56,4 +57,8 @@ object Mapper {
 
 data class Jobs(
     val list: MutableList<Job>
+)
+
+data class Strings(
+    val list: MutableList<String>?
 )

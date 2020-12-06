@@ -44,7 +44,7 @@
         android:id="@+id/jobTitle"
         style="@style/Text.Black.Bold"
         android:text="@string/app_name"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/jobIcon" />
@@ -53,7 +53,7 @@
         android:id="@+id/jobEmployer"
         style="@style/Text.Black"
         android:text="@string/app_name"
-        android:textSize="20sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/jobTitle" />
@@ -80,14 +80,14 @@
                 style="@style/Text.Black"
                 android:layout_gravity="start|center"
                 android:text="@string/app_name"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/jobLocationMin"
                 style="@style/Text.Black"
                 android:layout_gravity="center"
                 android:text="@string/app_name"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/favBtn"
@@ -129,19 +129,22 @@
                 style="@style/Text.Black"
                 android:layout_margin="5dp"
                 android:text="@string/app_name"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/jobInfo"
                 style="@style/Text.Black"
                 android:layout_margin="5dp"
                 android:text="@string/app_name"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <TextView
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
                 android:id="@+id/header2"
                 style="@style/Text.Black.Bold"
-                android:layout_margin="5dp"
                 android:text="@string/requirements"
                 android:textSize="20sp" />
 
@@ -150,7 +153,7 @@
                 style="@style/Text.Black"
                 android:layout_margin="5dp"
                 android:text="@string/requirements"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>

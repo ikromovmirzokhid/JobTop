@@ -6,12 +6,10 @@ import java.util.*
 object Colors {
     fun getRandomColor(): Int {
         val list = listOf(
-            "#9AD3BC",
-            "#89BEB3",
-            "#FFB6B9",
-            "#94B4A4",
-            "#FFAAA5"
+            "#E1F5EA",
+            "#F2F5F7",
+            "#EBDCF9",
         )
-        return list[Random().nextInt(4)].toColorInt()
+        return list[Random().nextInt(3)].toColorInt()
     }
 }
