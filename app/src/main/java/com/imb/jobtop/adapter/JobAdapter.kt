@@ -1,6 +1,7 @@
 package com.imb.jobtop.adapter
 
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,15 +28,22 @@ class JobViewHolder(itemView: View) :
 
     @SuppressLint("SetTextI18n")
     fun bind(item: Job, onclickListener: OnJobClickListener) {
+        if (item.isFavorite)
+            itemView.favoriteBtn.setImageResource(R.drawable.ic_round_favorite_24)
+        else
+            itemView.favoriteBtn.setImageResource(R.drawable.ic_round_favorite_border_24)
         itemView.jobTitleText.text = item.title
         itemView.jobEmployerText.text = item.employer
-        itemView.jobLocationText.text = item.location.subSequence(
-            0,
-            5
-        )
+        itemView.jobLocationText.text = item.location.subSequence(0, item.location.indexOf(" "))
         itemView.jobSalaryText.text = "Maosh - ${item.salary}"
         itemView.setOnClickListener { onclickListener.onClick(item) }
-        itemView.favoriteBtn.setOnClickListener { onclickListener.onFavorClick(item) }
+        itemView.favoriteBtn.setOnClickListener {
+            onclickListener.onFavorClick(item)
+            if (item.isFavorite)
+                itemView.favoriteBtn.setImageResource(R.drawable.ic_round_favorite_24)
+            else
+                itemView.favoriteBtn.setImageResource(R.drawable.ic_round_favorite_border_24)
+        }
     }
 
     companion object {

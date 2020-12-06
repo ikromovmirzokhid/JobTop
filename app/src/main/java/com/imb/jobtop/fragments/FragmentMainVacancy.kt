@@ -21,10 +21,7 @@ import com.imb.jobtop.adapter.OnCategoryClickListener
 import com.imb.jobtop.adapter.OnJobClickListener
 import com.imb.jobtop.di.components.MainComponent
 import com.imb.jobtop.fragments.base.BaseFragment
-import com.imb.jobtop.model.Category
-import com.imb.jobtop.model.Job
-import com.imb.jobtop.model.Mapper
-import com.imb.jobtop.model.Vacancy
+import com.imb.jobtop.model.*
 import com.imb.jobtop.utils.extensions.progressOff
 import com.imb.jobtop.utils.extensions.progressOn
 import com.imb.jobtop.utils.extensions.putData
@@ -43,6 +40,8 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
 
     private lateinit var db: FirebaseFirestore
     private lateinit var data: MutableList<Job>
+    private var interest: String? = null
+    private lateinit var dataByInterest: MutableList<Job>
     private lateinit var categ: MutableList<Category>
     private val viewModel by viewModels<VacancyViewModel> { component.viewModelFactory() }
 
@@ -52,12 +51,14 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
         db = Firebase.firestore
         data = mutableListOf()
         categ = mutableListOf()
-
-        fetchData("energetika")
-        fetchData("ta'lim")
-        fetchData("iqtisod")
-        fetchData("tibbiyot")
-        fetchData("transport")
+        db.collection("user").document(Firebase.auth.uid!!).get().addOnSuccessListener {
+            interest = it.toObject<User>()?.interests
+            fetchData("energetika")
+            fetchData("ta'lim")
+            fetchData("iqtisod")
+            fetchData("tibbiyot")
+            fetchData("transport")
+        }
 
         initAdapters()
         initSearchView()
@@ -78,11 +79,13 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
     private fun initButtonClickListeners() {
         seeAllBtn.setOnClickListener {
             val b = Bundle()
-            b.putData("data_list", data)
+            b.putData("data_list", Jobs(data))
             findNavController().navigate(R.id.jobList, b)
         }
         mapBtn.setOnClickListener {
-            findNavController().navigate(R.id.jobList)
+            val b = Bundle()
+            b.putData("data_list", Jobs(data))
+            findNavController().navigate(R.id.fragmentMapJobs, b)
         }
     }
 
@@ -93,12 +96,16 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
                 for (doc in document) {
                     val d = doc.toObject<Vacancy>()
                     data.add(Mapper.vacancyToJob(d, doc.id, cat))
+                    interest?.let {
+                        if (doc.id == interest)
+                            dataByInterest.add(Mapper.vacancyToJob(d, doc.id, cat))
+                    }
                     Log.d("TAG", "fetchData: ${doc.id} ${doc.data}")
                     Log.d("TAG", "fetchedData: $d")
                 }
                 categ.add(Category(db.collection(cat).id, cat, document.documents.size))
             }
-            jobAdapter.submitList(data)
+            jobAdapter.submitList(dataByInterest)
             jobAdapter.notifyDataSetChanged()
             categoryAdapter.submitList(categ)
             categoryAdapter.notifyDataSetChanged()
@@ -115,7 +122,7 @@ class FragmentMainVacancy : BaseFragment(R.layout.fragment_main_vacancy) {
                 if (d.catId == it.id)
                     catData.add(d)
             }
-            b.putData("data_list", catData)
+            b.putData("data_list", Jobs(catData))
             findNavController().navigate(R.id.jobListFragment, b)
         })
         jobAdapter = JobAdapter(OnJobClickListener({

@@ -13,7 +13,7 @@ data class Job(
 )
 
 data class Category(
-    var id: String ,
+    var id: String,
     var title: String = "Title",
     var jobCount: Int = 0
 )
@@ -49,3 +49,7 @@ object Mapper {
         )
     }
 }
+
+data class Jobs(
+    val list: MutableList<Job>
+)

@@ -46,5 +46,9 @@
         android:name="com.imb.jobtop.fragments.resume.FragmentProfile"
         android:label="FragmentProfile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/fragmentMapJobs"
+        android:name="com.imb.jobtop.fragments.map.FragmentMapJobs"
+        android:label="FragmentMapJobs" />
 
 </navigation>

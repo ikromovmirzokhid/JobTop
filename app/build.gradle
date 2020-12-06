@@ -36,8 +36,7 @@ android {
     }
 }
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+dependencies {implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation libs.coroutines
 
@@ -99,5 +98,4 @@ dependencies {
     implementation('com.github.bumptech.glide:okhttp3-integration:4.9.0') {
         exclude group: 'glide-parent'
     }
-
 }

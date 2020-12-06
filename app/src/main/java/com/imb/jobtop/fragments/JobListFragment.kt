@@ -1,6 +1,7 @@
 package com.imb.jobtop.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +14,9 @@ import com.imb.jobtop.adapter.JobAdapter
 import com.imb.jobtop.adapter.OnJobClickListener
 import com.imb.jobtop.fragments.base.BaseFragment
 import com.imb.jobtop.model.Job
+import com.imb.jobtop.model.Jobs
 import com.imb.jobtop.utils.extensions.getData
+import com.imb.jobtop.utils.extensions.getList
 import com.imb.jobtop.utils.extensions.putData
 import kotlinx.android.synthetic.main.fragment_job_list.*
 
@@ -24,7 +27,8 @@ class JobListFragment : BaseFragment(R.layout.fragment_job_list) {
         super.onViewCreated(view, savedInstanceState)
         val db = Firebase.firestore
 
-        data = arguments?.getData<MutableList<Job>>("data_list")
+        data = arguments?.getData<Jobs>("data_list")!!.list
+        Log.d("TAG", "aaa: ${data!![1]}]} ")
 
         val jobAdapter = JobAdapter(OnJobClickListener({
             val b = Bundle()
