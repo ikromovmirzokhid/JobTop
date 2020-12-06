@@ -23,7 +23,7 @@ class FragmentSplash : BaseFragment(R.layout.fragment_splash_screen) {
         counter = object : CountDownTimer(500, 500) {
             override fun onFinish() {
                 if (HawkUtils.userLoggedIn) {
-//                    findNavController().navigate(R.id.)
+                    findNavController().navigate(R.id.fragmentMain)
                 } else {
                     findNavController().popBackStack()
                     findNavController().navigate(R.id.fragmentAuthUser)

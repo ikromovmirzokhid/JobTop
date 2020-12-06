@@ -9,6 +9,8 @@
     <string name="submit_cv">Rezyume yuborish</string>
     <string name="registration_text"><u>Registratsiyadan o\'tish</u></string>
     <string name="ilova_qoidalari"><u>Ilova qoidalari</u></string>
+    <string name="enter">Kirish</string>
+
     <style name="spinner_title">Qiziqishlaringiz</style>
 
     <string-array name="animals">

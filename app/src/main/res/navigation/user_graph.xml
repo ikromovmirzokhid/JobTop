@@ -31,5 +31,10 @@
         android:id="@+id/jobDetailFragment"
         android:name="com.imb.jobtop.fragments.JobDetailFragment"
         android:label="JobDetailFragment" />
+    <fragment
+        android:id="@+id/fragmentMain"
+        tools:layout="@layout/fragment_main"
+        android:name="com.imb.jobtop.fragments.main.FragmentMain"
+        android:label="FragmentMain" />
 
 </navigation>

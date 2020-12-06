@@ -101,47 +101,64 @@
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="@dimen/marginEasy"
-            android:layout_marginRight="30dp"
-            android:entries="@array/animals"
-            android:background="@drawable/text_input_layout_bg"
-            android:prompt="@style/spinner_title" />
-
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/marginLittle"
-            android:layout_marginBottom="@dimen/marginBase"
-            android:gravity="center">
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="@dimen/marginSmall"
+            android:layout_marginRight="30dp"
+            android:hint="Qiziqishlaringiz"
+            android:theme="@style/TextLabel"
+            app:helperText="Qiziqishlaringizni kiriting">
 
-            <CheckBox
-                android:id="@+id/appRulesCheckbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/interestEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/appRulesBtn"
-                style="@style/Text.Link"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"
-                android:padding="2dp"
-                android:text="@string/ilova_qoidalari"
-                android:textSize="@dimen/textNormalSmall" />
+<!--        <Spinner-->
+<!--            android:id="@+id/interestsSpinner"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginLeft="30dp"-->
+<!--            android:layout_marginTop="@dimen/marginEasy"-->
+<!--            android:layout_marginRight="30dp"-->
+<!--            android:background="@drawable/text_input_layout_bg"-->
+<!--            android:prompt="@style/spinner_title" />-->
 
-            <TextView
-                style="@style/Text.Gray"
-                android:background="?attr/selectableItemBackground"
-                android:padding="4dp"
-                android:text="bilan tanishdim"
-                android:textSize="@dimen/textNormal" />
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/marginLittle"-->
+<!--            android:layout_marginBottom="@dimen/marginBase"-->
+<!--            android:gravity="center">-->
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/appRulesCheckbox"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/appRulesBtn"-->
+<!--                style="@style/Text.Link"-->
+<!--                android:background="?attr/selectableItemBackground"-->
+<!--                android:clickable="true"-->
+<!--                android:focusable="true"-->
+<!--                android:padding="2dp"-->
+<!--                android:text="@string/ilova_qoidalari"-->
+<!--                android:textSize="@dimen/textNormalSmall" />-->
+
+<!--            <TextView-->
+<!--                style="@style/Text.Gray"-->
+<!--                android:background="?attr/selectableItemBackground"-->
+<!--                android:padding="4dp"-->
+<!--                android:text="bilan tanishdim"-->
+<!--                android:textSize="@dimen/textNormal" />-->
 
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
     </LinearLayout>
 
@@ -153,7 +170,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/enterBtn"
+            android:id="@+id/registerUserBtn"
             style="@style/BaseButton.Blue"
             android:text="Registratsiya" />
 
@@ -165,17 +182,17 @@
 
             <TextView
                 style="@style/Text.Black"
-                android:text="Akkauntingiz yo'qmi?"
+                android:text="Akkauntingiz bormi?"
                 android:textSize="@dimen/textNormalSmall" />
 
             <TextView
-                android:id="@+id/registrationBtn"
+                android:id="@+id/enterBtn"
                 style="@style/Text.Link"
                 android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="4dp"
-                android:text="@string/registration_text"
+                android:text="@string/enter"
                 android:textSize="@dimen/textNormalSmall" />
 
 
