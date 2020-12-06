@@ -1,9 +1,12 @@
 package com.imb.jobtop.model
 
+import com.google.android.gms.maps.model.LatLng
+import com.google.maps.android.clustering.ClusterItem
+
 data class Job(
     var id: String,
     var catId: String,
-    var title: String,
+    var jobTitle: String,
     var employer: String,
     var phoneNumber: String,
     var salary: String,
@@ -12,7 +15,20 @@ data class Job(
     var requirements: String,
     val lat: String? = null,
     val lng: String? = null
-)
+) : ClusterItem {
+    override fun getPosition(): LatLng {
+        return LatLng(lat?.toDouble() ?: 0.0, lng?.toDouble() ?: 0.0)
+    }
+
+    override fun getTitle(): String? {
+        return jobTitle
+    }
+
+    override fun getSnippet(): String? {
+        return "snippet"
+    }
+
+}
 
 data class Category(
     var id: String,
@@ -43,7 +59,7 @@ object Mapper {
             id = id,
             isFavorite = b,
             catId = catID,
-            title = v.lavozim ?: "oddiy ishchi",
+            jobTitle = v.lavozim ?: "oddiy ishchi",
             employer = v.tashkilot_nomi ?: "Nomi yoq",
             phoneNumber = v.tel ?: "000",
             salary = v.maosh ?: "tekinga",

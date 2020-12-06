@@ -1,7 +1,6 @@
 package com.imb.jobtop.adapter
 
 import android.annotation.SuppressLint
-import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,7 +31,7 @@ class JobViewHolder(itemView: View) :
             itemView.favoriteBtn.setImageResource(R.drawable.ic_round_favorite_24)
         else
             itemView.favoriteBtn.setImageResource(R.drawable.ic_round_favorite_border_24)
-        itemView.jobTitleText.text = item.title
+        itemView.jobTitleText.text = item.jobTitle
         itemView.jobEmployerText.text = item.employer
         itemView.jobLocationText.text = item.location.subSequence(0, item.location.indexOf(" "))
         itemView.jobSalaryText.text = "Maosh - ${item.salary}"
@@ -63,7 +62,7 @@ class JobDiffCallback : DiffUtil.ItemCallback<Job>() {
         oldItem.id == newItem.id
 
     override fun areContentsTheSame(oldItem: Job, newItem: Job): Boolean =
-        oldItem.title == newItem.title && oldItem.location == newItem.location && oldItem.isFavorite == newItem.isFavorite
+        oldItem.jobTitle == newItem.jobTitle && oldItem.location == newItem.location && oldItem.isFavorite == newItem.isFavorite
 }
 
 class OnJobClickListener(
