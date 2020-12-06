@@ -27,6 +27,7 @@ import com.imb.jobtop.GetPhotoActivity
 import com.imb.jobtop.R
 import com.imb.jobtop.fragments.base.BaseFragment
 import com.imb.jobtop.model.User
+import com.imb.jobtop.utils.HawkUtils
 import com.imb.jobtop.utils.PermissionHandler
 import com.imb.jobtop.utils.extensions.progressOff
 import com.imb.jobtop.utils.extensions.progressOn
@@ -47,7 +48,7 @@ class FragmentProfile : BaseFragment(R.layout.fragment_profile) {
 
     private lateinit var auth: FirebaseAuth
     private val db = lazy { Firebase.firestore }.value
-    private var user = User()
+    private var user = lazy { HawkUtils.user }.value
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -265,6 +266,7 @@ class FragmentProfile : BaseFragment(R.layout.fragment_profile) {
     private fun setPhoto(bitmap: Bitmap?) {
         isPhotoLoading = true
         val bit = bitmap?.verticalRotate()
+        user.bitmap = bit
 
 //        loadBitmapOnServer(currentPhotoType, bit) {
 //            isPhotoLoading = false
@@ -273,7 +275,6 @@ class FragmentProfile : BaseFragment(R.layout.fragment_profile) {
 //        }
 
         isPhotoLoading = false
-        user.bitmap = bitmap
         setImageByType(bit)
     }
 
@@ -292,6 +293,6 @@ class FragmentProfile : BaseFragment(R.layout.fragment_profile) {
 
     override fun onDestroyView() {
         super.onDestroyView()
-
+        HawkUtils.user = user
     }
 }

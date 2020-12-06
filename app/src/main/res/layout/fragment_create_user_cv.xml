@@ -41,14 +41,12 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_gravity="center_horizontal"
-                android:scaleType="fitXY"
-                android:src="@drawable/profile_img" />
+                android:src="@drawable/user_img" />
 
             <TextView
                 android:id="@+id/name"
                 style="@style/Text.Black.Bold"
                 android:layout_gravity="center_horizontal"
-                android:text="Ikromov Mirzokhidjon"
                 android:textSize="18dp" />
 
             <EditText
