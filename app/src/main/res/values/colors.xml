@@ -10,6 +10,7 @@
     <color name="blue">#1565D8</color>
     <color name="lightMagenta">#CCCCFF</color>
     <color name="gray">#696F79</color>
+    <color name="lightGray">#F4F6F9</color>
 
     <color name="baseWhite">#fffffefe</color>
     <color name="colorTransparent">#00000000</color>

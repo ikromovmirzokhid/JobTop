@@ -80,8 +80,24 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-firestore-ktx'
 
+    //Circle ImageVIew
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.nabinbhandari.android:permissions:3.7'
+    implementation 'com.github.hkk595:Resizer:v1.5'
+
     implementation libs.room
     kapt libs.roomCompiler
     implementation libs.roomKTX
+
+    //Glide
+    implementation("com.github.bumptech.glide:glide:4.11.0") {
+        exclude group: "com.android.support"
+    }
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+    implementation('com.github.bumptech.glide:okhttp3-integration:4.9.0') {
+        exclude group: 'glide-parent'
+    }
 
 }

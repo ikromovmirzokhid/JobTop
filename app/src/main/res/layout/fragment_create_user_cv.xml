@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="SpUsage">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/baseWhite"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/buttonBackArrow"
+            style="@style/BackArrowPrimary" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/Text.Black"
+            android:layout_gravity="center"
+            android:text="Rezyume yaratish"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImg"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:src="@drawable/profile_img" />
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/Text.Black.Bold"
+                android:layout_gravity="center_horizontal"
+                android:text="Ikromov Mirzokhidjon"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/jobEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/marginVeryHigh"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/text_input_layout_bg"
+                android:drawableLeft="@drawable/ic_person"
+                android:drawablePadding="8dp"
+                android:hint="Kasbingiz"
+                android:inputType="textPersonName"
+                android:paddingStart="20dp" />
+
+            <EditText
+                android:id="@+id/ageEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/marginBase"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/text_input_layout_bg"
+                android:drawableLeft="@drawable/ic_age"
+                android:drawablePadding="8dp"
+                android:hint="Yoshingiz"
+                android:inputType="number"
+                android:paddingStart="20dp" />
+
+            <EditText
+                android:id="@+id/experienceEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/marginBase"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/text_input_layout_bg"
+                android:drawableLeft="@drawable/ic_experience"
+                android:drawablePadding="8dp"
+                android:hint="Ish Tajribasi"
+                android:inputType="number"
+                android:paddingStart="20dp" />
+
+            <EditText
+                android:id="@+id/qualificationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/marginBase"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/text_input_layout_bg"
+                android:drawableLeft="@drawable/ic_qualification"
+                android:drawablePadding="8dp"
+                android:hint="Ma’lumotingiz"
+                android:inputType="textPersonName"
+                android:paddingStart="20dp" />
+
+            <EditText
+                android:id="@+id/locationIconEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/marginBase"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/text_input_layout_bg"
+                android:drawableLeft="@drawable/ic_location"
+                android:drawablePadding="8dp"
+                android:hint="Yashash joyi"
+                android:inputType="text"
+                android:paddingStart="20dp" />
+
+
+            <EditText
+                android:id="@+id/skillsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/marginBase"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/text_input_layout_bg"
+                android:drawableLeft="@drawable/ic_skills"
+                android:drawablePadding="8dp"
+                android:hint="Qobiliyatlaringiz"
+                android:inputType="text"
+                android:paddingStart="20dp" />
+
+            <EditText
+                android:id="@+id/aboutEditText"
+                android:layout_width="match_parent"
+                android:layout_height="142dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/marginBase"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/text_input_layout_bg"
+                android:hint="O’zingiz haqida qo’shimcha"
+                android:inputType="text"
+                android:paddingStart="20dp" />
+
+            <Button
+                android:id="@+id/createCvBtn"
+                style="@style/BaseButton.Blue"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="@dimen/marginVeryHigh"
+                android:enabled="false"
+                android:text="Rezyume yaratish" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

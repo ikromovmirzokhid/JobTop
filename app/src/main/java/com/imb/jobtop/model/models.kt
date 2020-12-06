@@ -29,11 +29,11 @@ data class Vacancy(
     val tel: String? = null
 )
 
-data class User(
-    val interests: String? = null,
-    val name: String? = null,
-    val favorites: List<String>? = null
-)
+//data class User(
+//    val interests: String? = null,
+//    val name: String? = null,
+//
+//)
 
 object Mapper {
     fun vacancyToJob(v: Vacancy, id: String, catID: String): Job {

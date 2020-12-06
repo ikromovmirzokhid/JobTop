@@ -2,39 +2,49 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@+id/fragmentSplash"
-    android:id="@+id/user_graph">
+    android:id="@+id/user_graph"
+    app:startDestination="@+id/fragmentSplash">
 
     <fragment
         android:id="@+id/fragmentAuthUser"
-        tools:layout="@layout/fragment_auth_user"
         android:name="com.imb.jobtop.fragments.auth.FragmentAuthUser"
-        android:label="FragmentMainVacancy" />
+        android:label="FragmentMainVacancy"
+        tools:layout="@layout/fragment_auth_user" />
     <fragment
         android:id="@+id/fragmentRegistrationUser"
-        tools:layout="@layout/fragment_registration_user"
         android:name="com.imb.jobtop.fragments.auth.FragmentRegistrationUser"
-        android:label="FragmentRegistrationUser" />
+        android:label="FragmentRegistrationUser"
+        tools:layout="@layout/fragment_registration_user" />
     <fragment
         android:id="@+id/fragmentSplash"
-        tools:layout="@layout/fragment_splash_screen"
         android:name="com.imb.jobtop.fragments.FragmentSplash"
-        android:label="FragmentSplash" />
+        android:label="FragmentSplash"
+        tools:layout="@layout/fragment_splash_screen" />
 
     <fragment
-        tools:layout="@layout/fragment_job_list"
         android:id="@+id/jobListFragment"
         android:name="com.imb.jobtop.fragments.JobListFragment"
-        android:label="JobListFragment" />
+        android:label="JobListFragment"
+        tools:layout="@layout/fragment_job_list" />
     <fragment
-        tools:layout="@layout/fragment_job_detail"
         android:id="@+id/jobDetailFragment"
         android:name="com.imb.jobtop.fragments.JobDetailFragment"
-        android:label="JobDetailFragment" />
+        android:label="JobDetailFragment"
+        tools:layout="@layout/fragment_job_detail" />
     <fragment
         android:id="@+id/fragmentMain"
-        tools:layout="@layout/fragment_main"
         android:name="com.imb.jobtop.fragments.main.FragmentMain"
-        android:label="FragmentMain" />
+        android:label="FragmentMain"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/fragmentCreateUserCv"
+        android:name="com.imb.jobtop.fragments.resume.FragmentCreateUserCv"
+        android:label="FragmentCreateUserCv"
+        tools:layout="@layout/fragment_create_user_cv" />
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.imb.jobtop.fragments.resume.FragmentProfile"
+        android:label="FragmentProfile"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>

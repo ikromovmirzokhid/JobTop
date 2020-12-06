@@ -31,7 +31,7 @@ class JobViewHolder(itemView: View) :
         itemView.jobEmployerText.text = item.employer
         itemView.jobLocationText.text = item.location.subSequence(
             0,
-            item.location.indexOf(" ")
+            5
         )
         itemView.jobSalaryText.text = "Maosh - ${item.salary}"
         itemView.setOnClickListener { onclickListener.onClick(item) }
