@@ -49,16 +49,12 @@ class FragmentRegistrationUser : BaseFragment(R.layout.fragment_registration_use
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             progressOff()
             if (task.isSuccessful) {
+                val currentUserId = auth.currentUser?.uid
                 HawkUtils.userLoggedIn = true
                 db.collection("users")
-                    .add(user)
-                    .addOnSuccessListener { documentReference ->
-                        println("Debugging123 - $documentReference")
-                    }
-                    .addOnFailureListener { e ->
-                        println("Debugging123 - ${e.message}")
-                        showError(e.message)
-                    }
+                    .document(currentUserId!!).set(
+                        user
+                    )
                 Toast.makeText(
                     requireContext(), "Successfully Signed In",
                     Toast.LENGTH_SHORT
