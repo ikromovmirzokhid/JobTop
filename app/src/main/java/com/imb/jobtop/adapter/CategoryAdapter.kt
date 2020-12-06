@@ -22,7 +22,7 @@ class CategoryAdapter(private val onclickListener: OnCategoryClickListener) :
         holder.bind(getItem(position), onclickListener)
 }
 
-class CategoryViewHolder(private val itemView: View) :
+class CategoryViewHolder(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
 
     @SuppressLint("SetTextI18n")
@@ -36,7 +36,7 @@ class CategoryViewHolder(private val itemView: View) :
     companion object {
         fun from(parent: ViewGroup): CategoryViewHolder {
             val v = LayoutInflater.from(parent.context).inflate(
-                R.layout.list_item_job,
+                R.layout.list_item_category,
                 parent,
                 false
             )

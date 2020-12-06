@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textColor="@color/blue"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/jobEmployerText"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/locationIcon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,9 +31,9 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="13sp"
             app:layout_constraintBottom_toTopOf="@id/jobSalaryText"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/locationIcon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/jobTitleText" />
 
@@ -45,9 +45,9 @@
             android:layout_marginTop="15dp"
             android:text="@string/app_name"
             android:textColor="@color/blue"
-            android:textSize="18sp"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/locationIcon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/jobEmployerText" />
 
@@ -57,50 +57,25 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="@id/locationIcon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/locationIcon"
             app:layout_constraintTop_toTopOf="@id/locationIcon" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/postedTimeText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="@id/timeIcon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/timeIcon"
-            app:layout_constraintTop_toTopOf="@id/timeIcon" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/timeIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="3dp"
-            android:src="@drawable/ic_round_access_time_24"
-            app:layout_constraintBottom_toTopOf="@id/locationIcon"
-            app:layout_constraintEnd_toStartOf="@id/postedTimeText"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0"
-            app:layout_constraintVertical_chainStyle="packed" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/locationIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="3dp"
+            android:layout_margin="5dp"
             android:src="@drawable/ic_baseline_location_on_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/jobLocationText"
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/timeIcon" />
+            app:layout_constraintStart_toEndOf="@id/jobTitleText"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/favoriteBtn"

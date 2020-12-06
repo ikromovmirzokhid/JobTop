@@ -7,6 +7,27 @@
 
     android:orientation="vertical">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/appbarDetail"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/baseWhite"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/drawerBtn"
+            style="@style/BackArrowPrimary" />
+
+        <com.imb.jobtop.view.TwoTextTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:bothSize="48"
+            app:firstText="Job"
+            app:secondText="Top" />
+
+    </androidx.cardview.widget.CardView>
+
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/jobIcon"
@@ -17,7 +38,7 @@
         app:layout_constraintBottom_toTopOf="@id/jobTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/appbarDetail" />
 
     <TextView
         android:id="@+id/jobTitle"
@@ -47,34 +68,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/jobEmployer">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/jobSalary"
                 style="@style/Text.Black"
-                android:layout_margin="10dp"
+                android:layout_gravity="start|center"
                 android:text="@string/app_name"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/jobPostTime"
+                android:id="@+id/jobLocationMin"
                 style="@style/Text.Black"
-                android:layout_margin="10dp"
+                android:layout_gravity="center"
                 android:text="@string/app_name"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/jobLocation"
-                style="@style/Text.Black"
-                android:layout_margin="10dp"
-                android:text="@string/app_name"
-                android:textSize="20sp" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/favBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="?android:selectableItemBackground"
+                android:padding="5dp"
+                android:src="@drawable/ic_round_favorite_border_24" />
+        </FrameLayout>
 
     </androidx.cardview.widget.CardView>
 
@@ -97,24 +120,35 @@
             <TextView
                 android:id="@+id/header1"
                 style="@style/Text.Black.Bold"
+                android:layout_margin="5dp"
                 android:text="@string/info"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/jobEmployerNumber"
+                style="@style/Text.Black"
+                android:layout_margin="5dp"
+                android:text="@string/app_name"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/jobInfo"
                 style="@style/Text.Black"
+                android:layout_margin="5dp"
                 android:text="@string/app_name"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/header2"
                 style="@style/Text.Black.Bold"
+                android:layout_margin="5dp"
                 android:text="@string/requirements"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/jobRequirements"
                 style="@style/Text.Black"
+                android:layout_margin="5dp"
                 android:text="@string/requirements"
                 android:textSize="20sp" />
 

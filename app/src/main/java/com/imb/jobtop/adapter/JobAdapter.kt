@@ -27,10 +27,12 @@ class JobViewHolder(itemView: View) :
 
     @SuppressLint("SetTextI18n")
     fun bind(item: Job, onclickListener: OnJobClickListener) {
-        itemView.postedTimeText.text = item.time.toString()
         itemView.jobTitleText.text = item.title
         itemView.jobEmployerText.text = item.employer
-        itemView.jobLocationText.text = item.location
+        itemView.jobLocationText.text = item.location.subSequence(
+            0,
+            item.location.indexOf(" ")
+        )
         itemView.jobSalaryText.text = "Maosh - ${item.salary}"
         itemView.setOnClickListener { onclickListener.onClick(item) }
         itemView.favoriteBtn.setOnClickListener { onclickListener.onFavorClick(item) }

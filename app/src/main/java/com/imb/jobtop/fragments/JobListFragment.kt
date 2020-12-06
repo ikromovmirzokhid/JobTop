@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.imb.jobtop.R
 import com.imb.jobtop.adapter.JobAdapter
 import com.imb.jobtop.adapter.OnJobClickListener
-import com.imb.jobtop.database.MyDatabase
 import com.imb.jobtop.fragments.base.BaseFragment
 import com.imb.jobtop.model.Job
 import com.imb.jobtop.utils.extensions.getData
@@ -15,31 +18,38 @@ import com.imb.jobtop.utils.extensions.putData
 import kotlinx.android.synthetic.main.fragment_job_list.*
 
 class JobListFragment : BaseFragment(R.layout.fragment_job_list) {
+
+    private var data: MutableList<Job>? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val type = arguments?.getInt("type")
-        val db = MyDatabase.getInstance(requireContext())
-        val list: MutableList<Job>?
-        when (type) {
-            0 -> list = db.jodDao.getJobs().toMutableList()
+        val db = Firebase.firestore
 
-            1 -> list = db.jodDao.getJobs().toMutableList()
-
-            2 -> list = db.jodDao.getJobs().toMutableList()
-        }
-
+        data = arguments?.getData<MutableList<Job>>("data_list")
 
         val jobAdapter = JobAdapter(OnJobClickListener({
             val b = Bundle()
             b.putData("job", it)
             findNavController().navigate(R.id.jobDetailFragment, b)
         }, {
+            val user = db.collection("users").document(Firebase.auth.currentUser!!.uid)
             it.isFavorite = !it.isFavorite
-            db.jodDao.update(it)
+            if (it.isFavorite) {
+                user.update(
+                    "favorites",
+                    FieldValue.arrayUnion("${it.catId} ${it.id}")
+                )
+            } else {
+                user.update(
+                    "favorites",
+                    FieldValue.arrayRemove("${it.catId} ${it.id}")
+                )
+            }
         }))
-
+        buttonBackArrow.setOnClickListener {
+            pressBack()
+        }
+        jobAdapter.submitList(data)
         jobList.adapter = jobAdapter
         jobList.layoutManager = LinearLayoutManager(context)
-
     }
 }

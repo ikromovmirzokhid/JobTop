@@ -47,18 +47,18 @@
             android:background="@drawable/bg_search_view"
             app:iconifiedByDefault="false"
             app:layout_constraintBottom_toTopOf="@id/headerText1"
-            app:layout_constraintEnd_toStartOf="@id/filterButton"
+            app:layout_constraintEnd_toStartOf="@id/mapBtn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/appbar"
             app:queryHint="@string/search_jobs" />
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/filterButton"
+            android:id="@+id/mapBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@color/colorTransparent"
-            android:src="@drawable/ic_group_215"
+            android:src="@drawable/ic_group_225"
             app:layout_constraintBottom_toBottomOf="@id/searchView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/searchView"
@@ -80,8 +80,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/categoryList"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@id/headerText2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

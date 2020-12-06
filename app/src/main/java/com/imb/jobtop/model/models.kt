@@ -1,26 +1,51 @@
 package com.imb.jobtop.model
 
-import android.graphics.Bitmap
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
-@Entity(tableName = "Jobs")
 data class Job(
-    @PrimaryKey(autoGenerate = true)
-    var id: Long,
-    var catId: Long,
+    var id: String,
+    var catId: String,
     var title: String,
     var employer: String,
-    var info: String,
+    var phoneNumber: String,
     var salary: String,
-    var isFavorite: Boolean,
+    var isFavorite: Boolean = false,
     var location: String,
-    var time: Long
-//    var requirements: List<String>
+    var requirements: String
 )
 
 data class Category(
-    var id: Long,
-    var title: String,
-    var jobCount: Int,
+    var id: String ,
+    var title: String = "Title",
+    var jobCount: Int = 0
 )
+
+data class Vacancy(
+    val address: String? = null,
+    val lat: String? = null,
+    val lng: String? = null,
+    val lavozim: String? = null,
+    val maosh: String? = null,
+    val talablar: String? = null,
+    val tashkilot_nomi: String? = null,
+    val tel: String? = null
+)
+
+data class User(
+    val interests: String? = null,
+    val name: String? = null,
+    val favorites: List<String>? = null
+)
+
+object Mapper {
+    fun vacancyToJob(v: Vacancy, id: String, catID: String): Job {
+        return Job(
+            id = id,
+            catId = catID,
+            title = v.lavozim ?: "oddiy ishchi",
+            employer = v.tashkilot_nomi ?: "Nomi yoq",
+            phoneNumber = v.tel ?: "000",
+            salary = v.maosh ?: "tekinga",
+            location = v.address ?: "oshatta",
+            requirements = v.talablar ?: "diplom bolsa boldi"
+        )
+    }
+}
